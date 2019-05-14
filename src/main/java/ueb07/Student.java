@@ -1,8 +1,20 @@
 package ueb07;
 
-class Student {
+class Student implements Comparable<Student>{
 	private int matrikel;
 	private String name;
+
+	public int compareTo(Student a){
+		if (this.getMatrikel() > a.getMatrikel()){
+			return 1;
+		}
+		else if (this.getMatrikel() == a.getMatrikel()){
+			return 0;
+		}
+		else {
+			return -1;
+		}
+	}
 
 	Student(int m, String n) {
 		setMatrikel(m);
