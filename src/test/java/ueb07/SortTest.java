@@ -7,6 +7,7 @@ import org.apache.commons.lang3.builder.ToStringExclude;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 
 public class SortTest {
@@ -41,9 +42,10 @@ public class SortTest {
         Sortieren.bubbleSort(a2);
         assertArrayEquals(ref2, a2);
     }
-/*
+
     @Test
     void testBubble2() {
+
         Student s1 = new Student(1, "Sarah");
         Student s2 = new Student(2, "Peter");
         Student s3 = new Student(3, "Anna");
@@ -70,7 +72,6 @@ public class SortTest {
         assertArrayEquals(ref2, a2);
     }
 
- */
 
 }
 
