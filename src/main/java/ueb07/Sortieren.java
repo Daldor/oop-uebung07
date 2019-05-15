@@ -5,6 +5,8 @@ import org.apache.logging.log4j.util.PropertySource;
 
 import java.util.Comparator;
 
+
+
 public class Sortieren  {
     static <T> void swap(T [] arr, int a, int b){
         T hilf = arr[a];
@@ -12,7 +14,7 @@ public class Sortieren  {
         arr[b] = hilf;
     }
 
-    static <T> void bsort(T[] arr){
+    static <T extends Comparable> void bsort(T[] arr){
         int i = 0;
         while (i < arr.length - 1) {
             int j = i + 1;
@@ -26,7 +28,7 @@ public class Sortieren  {
         }
     }
 
-    static <T> void bubbleSort(T[]arr){
+    static <T extends Comparable> void bubbleSort(T[]arr){
         for (int k = 0; k < arr.length; k++) {
             for (int i = 0; i < arr.length - 1; i++) {
                 int j = i + 1;
@@ -38,7 +40,7 @@ public class Sortieren  {
         }
     }
 
-    static <T> void bubbleSort(T[] arr, NameComparator n){
+    static <T extends Sortieren> void bubbleSort(Student[] arr, NameComparator n){
         for (int k = 0; k < arr.length; k++) {
             for (int i = 0; i < arr.length - 1; i++) {
                 int j = i + 1;
@@ -47,6 +49,12 @@ public class Sortieren  {
                     //i = j - 1;
                 }
             }
+        }
+    }
+
+    class NameComparator implements Comparator<Student>{
+        public int compare(Student a, Student b){
+            return a.getName().compareTo(b.getName());
         }
     }
 
@@ -57,10 +65,5 @@ public class Sortieren  {
 
      */
 
-    class NameComparator implements Comparable<Student>{
-        public int compareTo(Student a, Student b){
-            return a.getName().compareTo(b.getName());
-        }
-    }
 
 }

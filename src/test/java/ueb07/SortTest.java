@@ -58,6 +58,7 @@ public class SortTest {
         assertArrayEquals(ref2, a2);
     }
 
+    /*
     @Test
     void testBubble3() {
         Student s1 = new Student(1, "Sarah");
@@ -71,6 +72,8 @@ public class SortTest {
         Sortieren.bubbleSort(a2,  new NameMatComparator());
         assertArrayEquals(ref2, a2);
     }
+
+     */
 
 
 }

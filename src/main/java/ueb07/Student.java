@@ -1,9 +1,10 @@
 package ueb07;
 
-class Student {
+class Student  {
 	private int matrikel;
 	private String name;
 
+	/*
 	public int compareTo(Student a){
 		if (this.getMatrikel() > a.getMatrikel()){
 			return 1;
@@ -16,11 +17,33 @@ class Student {
 		}
 	}
 
+	 */
+
+	public int compareTo(Student a){
+		return name.compareTo(a.getName());
+	}
+
+
+
+	/*
+	public <T extends Sortieren> boolean NameComparator(Student a){
+		if(this.getName().compareTo(a.getName()) > 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	 */
+
+	/*
 	public String compareTo(Student a){
 		if (this.getName() > a.getName()){
 			return 1;
 		}
 	}
+
+	 */
 
 	Student(int m, String n) {
 		setMatrikel(m);
