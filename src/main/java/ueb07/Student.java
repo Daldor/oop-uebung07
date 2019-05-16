@@ -4,7 +4,7 @@ class Student  {
 	private int matrikel;
 	private String name;
 
-	/*
+
 	public int compareTo(Student a){
 		if (this.getMatrikel() > a.getMatrikel()){
 			return 1;
@@ -17,11 +17,11 @@ class Student  {
 		}
 	}
 
-	 */
 
-	public int compareTo(Student a){
-		return name.compareTo(a.getName());
-	}
+
+	//public int compareTo(Student a){
+	//	return name.compareTo(a.getName());
+	//}
 
 
 

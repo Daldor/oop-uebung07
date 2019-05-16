@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.apache.commons.lang3.builder.ToStringExclude;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -54,11 +55,12 @@ public class SortTest {
         Student[] a2 = {s4, s2, s3, s1};
         Student[] ref2 = {s3, s4, s2, s1};
 
-        Sortieren.bubbleSort(a2,  new NameComparator());
+        Sortieren.bubbleSort(a2,  new Sortieren.NameComparator());
+
         assertArrayEquals(ref2, a2);
     }
 
-    /*
+
     @Test
     void testBubble3() {
         Student s1 = new Student(1, "Sarah");
@@ -69,11 +71,10 @@ public class SortTest {
         Student[] a2 = {s4, s2, s3, s1};
         Student[] ref2 = {s3, s4, s1, s2};
 
-        Sortieren.bubbleSort(a2,  new NameMatComparator());
+        Sortieren.bubbleSort(a2,  new Sortieren.NameMatComparator());
         assertArrayEquals(ref2, a2);
     }
 
-     */
 
 
 }
