@@ -1,6 +1,6 @@
 package ueb07;
 
-class Student  {
+class Student implements Comparable<Student> {
 	private int matrikel;
 	private String name;
 
@@ -18,32 +18,6 @@ class Student  {
 	}
 
 
-
-	//public int compareTo(Student a){
-	//	return name.compareTo(a.getName());
-	//}
-
-
-
-	/*
-	public <T extends Sortieren> boolean NameComparator(Student a){
-		if(this.getName().compareTo(a.getName()) > 0){
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	 */
-
-	/*
-	public String compareTo(Student a){
-		if (this.getName() > a.getName()){
-			return 1;
-		}
-	}
-
-	 */
 
 	Student(int m, String n) {
 		setMatrikel(m);

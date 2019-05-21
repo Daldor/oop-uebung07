@@ -8,29 +8,19 @@ import java.util.Comparator;
 
 
 public class Sortieren  {
-    static <T> void swap(T [] arr, int a, int b){
+    static <T> T[] swap(T [] arr, int a, int b){
+
+        if(arr.length < 1){
+            return arr;
+        }
         T hilf = arr[a];
         arr[a] = arr[b];
         arr[b] = hilf;
+        return arr;
     }
 
-    /*
-    static <T extends Comparable> void bsort(T[] arr){
-        int i = 0;
-        while (i < arr.length - 1) {
-            int j = i + 1;
-            if (arr[i].compareTo(arr[j]) == 1){
-                swap(arr, i, j);
-                i = j;
-            } else {
-                swap(arr, i, j);
-                i = 0;
-            }
-        }
-    }
-     */
 
-    static <T extends Comparable<? super T>> void bubbleSort(T[]arr){
+    static <T extends Comparable<T>> void bubbleSort(T[]arr){
         for (int k = 0; k < arr.length; k++) {
             for (int i = 0; i < arr.length - 1; i++) {
                 int j = i + 1;
@@ -42,7 +32,7 @@ public class Sortieren  {
         }
     }
 
-    static <T extends Sortieren> void bubbleSort(Student[] arr, NameComparator n){
+    static <T> void bubbleSort(T [] arr, Comparator n){
         for (int k = 0; k < arr.length; k++) {
             for (int i = 0; i < arr.length - 1; i++) {
                 int j = i + 1;
@@ -54,21 +44,14 @@ public class Sortieren  {
         }
     }
 
-    static <T extends Sortieren> void bubbleSort(Student[] arr, NameMatComparator n){
-        for (int k = 0; k < arr.length; k++) {
-            for (int i = 0; i < arr.length - 1; i++) {
-                int j = i + 1;
-                if (n.compare(arr[i],(arr[j])) > 0){
-                    swap(arr, i, j);
-                    //i = j - 1;
-                }
-            }
-        }
-    }
-
     static class NameComparator implements Comparator<Student>{
         public int compare(Student a, Student b){
-            return a.getName().compareTo(b.getName());
+            if(a.getName().equals(b.getName())){
+                return  Integer.compare(a.getMatrikel(), b.getMatrikel());
+            }
+            else {
+                return a.getName().compareTo(b.getName());
+            }
         }
     }
 
